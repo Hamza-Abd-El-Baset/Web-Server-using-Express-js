@@ -1,16 +1,15 @@
+const { port } = require('./config')
+
 const express = require("express")
 require('express-async-errors')
 
 require('./mongoDbConnect')
 
-const port = 3000
 const app = express()
 
 const userRouter = require('./routers/users')
 const todoRouter = require('./routers/todo')
 const DNSRouter = require('./routers/dns')
-
-
 
 app.use(express.json())
 

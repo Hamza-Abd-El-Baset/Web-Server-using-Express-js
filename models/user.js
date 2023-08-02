@@ -6,8 +6,7 @@ const util = require('util')
 const signJWT = util.promisify(jwt.sign)
 const verifyJWT = util.promisify(jwt.verify)
 
-const saltRounds = 7
-const jwtSecret = 'kdlafjlkdsasajf'
+const {saltRounds, jwtSecret} = require('../config')
 
 /*
 const myToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTZjZGEwMGExMjQ2OTRjM2VlYWVlNiIsImlhdCI6MTY4OTIzNzI4NCwiZXhwIjoxNjg5MjM3NDA0fQ.3CbfY6T-tPR9sGY0eBrjpEtjC8hABRBATRedA_KRk3Y"
