@@ -128,6 +128,12 @@ router.get('/profile', authentication,
 })
 
 //read
+router.get('/profile/page', authentication,
+(req, res, next) => {
+    res.render('profile', req.user)
+})
+
+//read
 router.get('/',(req,res)=>{
     User.find({})
     .then(data => {
