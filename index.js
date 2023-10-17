@@ -11,6 +11,9 @@ const app = express()
 const userRouter = require('./routers/users')
 const todoRouter = require('./routers/todo')
 const DNSRouter = require('./routers/dns')
+const { onRequest } = require('firebase-functions/v1/https')
+
+const functions = requirie("firebase-functions")
 
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
@@ -32,3 +35,6 @@ app.use('/dns', DNSRouter)
 app.listen(port, () => {
     console.info(`Server is now listening on port ${port}`)
 })
+
+exports.api = functions.https.onRequest(app)
+
