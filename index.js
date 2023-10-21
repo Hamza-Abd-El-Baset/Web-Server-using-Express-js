@@ -1,5 +1,5 @@
 const { port } = require('./config')
-
+port = 3000
 const express = require("express")
 const cors = require('cors')
 require('express-async-errors')
