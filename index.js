@@ -1,5 +1,5 @@
 const { port } = require('./config')
-port = 3000
+
 const express = require("express")
 const cors = require('cors')
 require('express-async-errors')
@@ -11,9 +11,6 @@ const app = express()
 const userRouter = require('./routers/users')
 const todoRouter = require('./routers/todo')
 const DNSRouter = require('./routers/dns')
-const { onRequest } = require('firebase-functions/v1/https')
-
-const functions = requirie("firebase-functions")
 
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
@@ -36,5 +33,4 @@ app.listen(port, () => {
     console.info(`Server is now listening on port ${port}`)
 })
 
-exports.api = functions.https.onRequest(app)
 
